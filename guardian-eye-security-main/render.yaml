@@ -4,8 +4,8 @@
       "type": "web",
       "name": "guardian-eye-backend",
       "env": "node",
-      "buildCommand": "cd backend && npm install",
-      "startCommand": "cd backend && npm start",
+      "buildCommand": "cd guardian-eye-security-main/backend && npm install",
+      "startCommand": "cd guardian-eye-security-main/backend && npm start",
       "healthCheckPath": "/health",
       "envVars": [
         { "key": "NODE_ENV", "value": "production" },
@@ -16,8 +16,8 @@
       "type": "web",
       "name": "guardian-eye-frontend",
       "env": "static",
-      "buildCommand": "npm install && npm run build",
-      "staticPublishPath": "./dist",
+      "buildCommand": "cd guardian-eye-security-main && npm install && npm run build",
+      "staticPublishPath": "guardian-eye-security-main/dist",
       "headers": [
         { "path": "/*", "name": "X-Frame-Options", "value": "DENY" }
       ],
