@@ -23,7 +23,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/login" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/vulnerabilities" element={<div className="min-h-screen bg-background p-6"><VulnerabilityScanner /></div>} />
           <Route path="/passwords" element={<div className="min-h-screen bg-background p-6"><PasswordAnalyzer /></div>} />

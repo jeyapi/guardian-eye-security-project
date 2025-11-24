@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { logError } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Upload, Users, Brain, AlertTriangle, Info, CheckCircle2, Loader2, Lock, FileText, Search, Bell, Activity, TrendingUp } from "lucide-react";
@@ -42,7 +42,7 @@ const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [severityFilter, setSeverityFilter] = useState("all");
   const [activityFilter, setActivityFilter] = useState("all");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     loadAnomalies();
@@ -330,7 +330,7 @@ const Dashboard = () => {
                     <Button
                       variant="outline"
                       className="h-auto flex-col items-start p-4 hover-lift"
-                      onClick={() => navigate('/vulnerabilities')}
+                      onClick={() => window.location.assign('/vulnerabilities')}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Search className="w-5 h-5 text-destructive" />
@@ -343,7 +343,7 @@ const Dashboard = () => {
                     <Button
                       variant="outline"
                       className="h-auto flex-col items-start p-4 hover-lift"
-                      onClick={() => navigate('/passwords')}
+                      onClick={() => window.location.assign('/passwords')}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Lock className="w-5 h-5 text-orange-500" />
@@ -356,7 +356,7 @@ const Dashboard = () => {
                     <Button
                       variant="outline"
                       className="h-auto flex-col items-start p-4 hover-lift"
-                      onClick={() => navigate('/reports')}
+                      onClick={() => window.location.assign('/reports')}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <FileText className="w-5 h-5 text-primary" />
@@ -390,7 +390,7 @@ const Dashboard = () => {
                     <Button
                       variant="outline"
                       className="h-auto flex-col items-start p-4 hover-lift"
-                      onClick={() => navigate('/alerts')}
+                      onClick={() => window.location.assign('/alerts')}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Bell className="w-5 h-5 text-yellow-500" />
@@ -403,7 +403,7 @@ const Dashboard = () => {
                     <Button
                       variant="outline"
                       className="h-auto flex-col items-start p-4 hover-lift"
-                      onClick={() => navigate('/behavioral-analysis')}
+                      onClick={() => window.location.assign('/behavioral-analysis')}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Activity className="w-5 h-5 text-blue-500" />
@@ -416,7 +416,7 @@ const Dashboard = () => {
                     <Button
                       variant="outline"
                       className="h-auto flex-col items-start p-4 hover-lift"
-                      onClick={() => navigate('/predictive-intelligence')}
+                      onClick={() => window.location.assign('/predictive-intelligence')}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <TrendingUp className="w-5 h-5 text-green-500" />
