@@ -7,7 +7,7 @@ import { Shield, Upload, Users, Brain, AlertTriangle, Info, CheckCircle2, Loader
 import { toast } from "sonner";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
-const API_URL = "http://localhost:3001/api";
+import { API_URL } from "@/config/api";
 import AnomalyTable from "@/components/AnomalyTable";
 import StatsCard from "@/components/StatsCard";
 import AnomalyChart from "@/components/charts/AnomalyChart";
