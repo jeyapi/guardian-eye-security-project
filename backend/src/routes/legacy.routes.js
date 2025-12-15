@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const DatabaseManager = require('../../database');
-const CSVParser = require('../../csvParser');
-const AnomalyDetector = require('../../anomalyDetector');
-const ProfileBuilder = require('../../profileBuilder');
+const DatabaseManager = require('../database');
+const CSVParser = require('../csvParser');
+const AnomalyDetector = require('../anomalyDetector');
+const ProfileBuilder = require('../profileBuilder');
 
 const router = express.Router();
 
