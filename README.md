@@ -1,22 +1,22 @@
 # GuardianEye - AI-Powered Insider Threat Detection
 
-Système de détection d'anomalies utilisant l'IA pour identifier les menaces internes à partir de 65k+ logs de connexions.
+Anomaly detection system using AI to identify insider threats from 65k+ connection logs.
 
-## Fonctionnalités
+## Features
 
-- **IA Isolation Forest** - Détection multi-dimensionnelle (6 features, 500k+ logs/sec)
-- **Visualisations** - Graphiques de tendances, heatmap 7×24h, top utilisateurs, scores de risque
-- **Export** - CSV/JSON avec filtres avancés
-- **Recherche temps réel** - <50ms, filtres par sévérité et activité
-- **Dashboard interactif** - Auto-refresh, progression animée
+- **Isolation Forest AI** - Multi-dimensional detection (6 features, 500k+ logs/sec)
+- **Visualizations** - Trend charts, 7×24h heatmap, top users, risk scores
+- **Export** - CSV/JSON with advanced filters
+- **Real-time search** - <50ms, severity and activity filters
+- **Interactive dashboard** - Auto-refresh, animated progress
 
 ## Installation
 
 ### 1. Configuration
 
-Créer `backend/.env`:
+Create `backend/.env`:
 ```env
-DB_TYPE=postgres                                # postgres ou sqlite
+DB_TYPE=postgres                                # postgres or sqlite
 PG_HOST=your-host.supabase.co                  # PostgreSQL host
 PG_PASSWORD=your-password                       # Database password
 PG_DATABASE=postgres
@@ -24,31 +24,31 @@ PG_SSL=true
 PORT=3001
 ```
 
-### 2. Démarrage
+### 2. Start
 
 ```bash
-# Automatique
+# Automatic
 start.bat
 
-# Manuel
+# Manual
 cd backend && npm install && node server.js
 cd .. && npm install && npm run dev
 ```
 
-Accès: http://localhost:8080/dashboard
+Access: http://localhost:8080/dashboard
 
-## Utilisation
+## Usage
 
 **Workflow:**
-1. **Ingest Data** - Charge 65,669 logs CSV
-2. **Build Profiles** - Crée 228 profils utilisateurs  
-3. **Detect Anomalies** - Analyse et détecte ~15 anomalies (0.02%)
+1. **Ingest Data** - Load 65,669 CSV logs
+2. **Build Profiles** - Create 228 user profiles  
+3. **Detect Anomalies** - Analyze and detect ~15 anomalies (0.02%)
 
-**Visualisation:** Graphiques interactifs, heatmap, recherche/filtres temps réel, export CSV/JSON
+**Visualization:** Interactive charts, heatmap, real-time search/filters, CSV/JSON export
 
-## Stack Technique
+## Tech Stack
 
-**Backend:** Node.js, Express, TypeORM, PostgreSQL/SQLite, Isolation Forest IA  
+**Backend:** Node.js, Express, TypeORM, PostgreSQL/SQLite, Isolation Forest AI  
 **Frontend:** React, TypeScript, Vite, Recharts, Tailwind CSS, shadcn/ui
 
 ## Structure
@@ -58,9 +58,9 @@ backend/
 ├── src/
 │   ├── entities/          # TypeORM entities (DeviceLog, UserProfile)
 │   ├── routes/            # API endpoints
-│   ├── database.js        # Gestionnaire TypeORM
-│   ├── anomalyDetector.js # IA Isolation Forest
-│   └── data-source.js     # Configuration DB
+│   ├── database.js        # TypeORM manager
+│   ├── anomalyDetector.js # Isolation Forest AI
+│   └── data-source.js     # DB configuration
 └── .env                   # Configuration
 
 src/
@@ -72,17 +72,17 @@ src/
 
 **Endpoints:** `/api/ingest` (POST), `/api/build-profiles` (POST), `/api/detect-anomalies` (POST), `/api/stats` (GET), `/api/logs` (GET), `/health` (GET)
 
-Documentation complète: [API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md)
+Full documentation: [API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md)
 
 ## Performance
 
 - **Ingestion:** 15s (65k logs, PostgreSQL cloud)
-- **Détection:** 1-2s (500k+ logs/sec)
-- **Recherche:** <50ms
+- **Detection:** 1-2s (500k+ logs/sec)
+- **Search:** <50ms
 - **Batch insert:** 5000 records/batch
 
-## Dépannage
+## Troubleshooting
 
-**Port 3001 occupé:** `netstat -ano | findstr :3001`  
-**Connexion PostgreSQL:** Vérifier `DB_TYPE=postgres`, credentials `.env`, `PG_SSL=true`  
-**Pas de données:** Suivre les 3 étapes dans l'ordre (Ingest → Build → Detect)
+**Port 3001 in use:** `netstat -ano | findstr :3001`  
+**PostgreSQL connection:** Check `DB_TYPE=postgres`, credentials in `.env`, `PG_SSL=true`  
+**No data:** Follow the 3 steps in order (Ingest → Build → Detect)
