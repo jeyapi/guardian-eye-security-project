@@ -38,6 +38,32 @@
 
 ##  Démarrage Rapide
 
+### Configuration Requise
+
+**Base de Données:**
+- PostgreSQL (Supabase recommandé pour le cloud)
+- Ou SQLite pour développement local
+
+**Variables d'Environnement:**
+
+Créer `backend/.env`:
+```env
+# Database Type: postgres ou sqlite
+DB_TYPE=postgres
+
+# PostgreSQL Configuration (si DB_TYPE=postgres)
+PG_HOST=your-supabase-host.supabase.co
+PG_PORT=5432
+PG_USER=postgres
+PG_PASSWORD=your-password
+PG_DATABASE=postgres
+PG_SSL=true
+
+# Server Configuration
+PORT=3001
+NODE_ENV=development
+```
+
 ### Développement Local
 
 **Script Automatique (Recommandé):**
@@ -51,6 +77,7 @@ Terminal 1 - Backend:
 ```bash
 cd backend
 npm install
+# Configurer le fichier .env avant de démarrer
 node server.js
 ```
 
@@ -62,7 +89,7 @@ npm run dev
 
 **Accès:** http://localhost:8080/dashboard
 
-**Note:** Le déploiement gratuit est parfait pour démonstration et tests. Pour production, considérez un plan payant avec base de données persistante.
+**Note:** Pour production, utilisez PostgreSQL avec Supabase (gratuit). Pour développement local, SQLite fonctionne aussi.
 
 ---
 
@@ -151,7 +178,9 @@ Sévérité: Critical + Activité: Connect
 
 ### Backend
 - **Node.js** + **Express.js** - API REST
-- **SQLite** (better-sqlite3) - Base de données
+- **TypeORM** - ORM moderne avec support multi-DB
+- **PostgreSQL** (pg) - Base de données production
+- **SQLite** (better-sqlite3) - Base de données développement
 - **csv-parse** - Parser CSV
 - **IA Custom** - Isolation Forest optimisé
 
@@ -168,10 +197,19 @@ Sévérité: Critical + Activité: Connect
 guardian-eye-security-main/
 ├── backend/
 │   ├── server.js              # Serveur Express
-│   ├── database.js            # Gestionnaire SQLite
-│   ├── csvParser.js           # Parser CSV
-│   ├── anomalyDetector.js     # IA optimisée 
-│   ├── profileBuilder.js      # Profiling utilisateur
+│   ├── src/
+│   │   ├── database.js        # Gestionnaire TypeORM
+│   │   ├── data-source.js     # Configuration TypeORM
+│   │   ├── entities/
+│   │   │   ├── DeviceLog.js   # Entity logs
+│   │   │   └── UserProfile.js # Entity profils
+│   │   ├── csvParser.js       # Parser CSV
+│   │   ├── anomalyDetector.js # IA optimisée 
+│   │   ├── profileBuilder.js  # Profiling utilisateur
+│   │   └── routes/
+│   │       └── legacy.routes.js # Routes API
+│   ├── .env                   # Configuration (à créer)
+│   ├── .env.example           # Template configuration
 │   └── package.json
 ├── src/
 │   ├── config/
@@ -212,6 +250,15 @@ Voir [backend/API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md) pour plus de d
 
 ##  Dépannage
 
+# Vérifier la configuration .env
+# DB_TYPE, PG_HOST, PG_PASSWORD doivent être définis
+```
+
+### Erreur de connexion PostgreSQL
+- Vérifier les credentials dans `.env`
+- Vérifier que `DB_TYPE=postgres`
+- Tester la connexion Supabase
+- Vérifier que `PG_SSL=true` pour Supabase
 ### Backend ne démarre pas
 ```bash
 # Vérifier que le port 3001 est libre
@@ -225,13 +272,14 @@ npm install
 ### Frontend ne se connecte pas
 - Vérifier que le backend tourne sur http://localhost:3001
 - Vérifier la console du navigateur pour erreurs CORS
-- Rafraîchir la page
-
-### Pas de données affichées
-1. Suivre les 3 étapes dans l'ordre
-2. Attendre les messages de succès
-3. Vérifier les logs du backend
-
+- Rafraîchir la pa15 secondes (65k logs, PostgreSQL cloud)
+- **Profiling:** ~2-3 secondes (228 users)
+- **Détection:** ~1-2 secondes (500k+ records/sec, IA optimisée)
+- **Recherche:** <50ms (temps réel)
+- **Filtres:** <100ms (temps réel)
+- **Export CSV:** ~500ms (1,400 lignes)
+- **Export JSON:** ~300ms (1,400 lignes)
+- **Batch Insert:** 5000 records/batch (optimisé TypeORM
 ##  Performance
 
 - **Ingestion:** ~5-7 secondes (65k logs)
