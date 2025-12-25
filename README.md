@@ -72,9 +72,9 @@ npm run dev
 ### 1. Workflow en 3 Étapes
 
 ```
-1️⃣ Ingest Data      → Charge 65,669 logs depuis CSV
-2️⃣ Build Profiles   → Crée 228 profils utilisateurs
-3️⃣ Detect Anomalies → Détecte ~15 anomalies (0.02%)
+1️ Ingest Data      → Charge 65,669 logs depuis CSV
+2️ Build Profiles   → Crée 228 profils utilisateurs
+3️ Detect Anomalies → Détecte ~15 anomalies (0.02%)
 ```
 
 ### 2. Visualiser les Données
