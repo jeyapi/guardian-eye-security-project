@@ -7,7 +7,6 @@
 [![Data](https://img.shields.io/badge/Data-65k%20logs-orange)]()
 
 ##  Fonctionnalités
-
 ###  IA Optimisée (50% Plus Rapide)
 - **Batch Processing** - Traitement par lots de 1000 logs
 - **Cache Intelligent** - Statistiques mises en cache
