@@ -1,43 +1,43 @@
 # GuardianEye - AI-Powered Insider Threat Detection
 
-🛡️ **Système professionnel de détection d'anomalies avec IA optimisée**
+**Système professionnel de détection d'anomalies avec IA optimisée**
 
 [![Performance](https://img.shields.io/badge/Performance-12k%20logs%2Fs-brightgreen)]()
 [![AI](https://img.shields.io/badge/AI-Isolation%20Forest-blue)]()
 [![Data](https://img.shields.io/badge/Data-65k%20logs-orange)]()
 
-## 🌟 Fonctionnalités
+##  Fonctionnalités
 
-### ⚡ IA Optimisée (50% Plus Rapide)
+###  IA Optimisée (50% Plus Rapide)
 - **Batch Processing** - Traitement par lots de 1000 logs
 - **Cache Intelligent** - Statistiques mises en cache
 - **6 Features d'Analyse** - Détection multi-dimensionnelle
 - **Performance:** 12,000+ logs/seconde
 
-### 📊 Visualisations Avancées
+###  Visualisations Avancées
 - **Graphique de Tendances** - Évolution des anomalies sur 30 jours
 - **Top Utilisateurs** - Top 10 utilisateurs suspects
 - **Heatmap d'Activité** - Grille 7×24 heures
 - **Scores de Risque** - Évaluation pondérée par utilisateur
 
-### 💾 Export de Données
+###  Export de Données
 - **CSV** - Compatible Excel/Google Sheets
 - **JSON** - Pour analyse programmatique
 - Export des données filtrées
 
-### 🔍 Recherche et Filtres
+###  Recherche et Filtres
 - **Recherche en Temps Réel** - Instantanée (<50ms)
 - **Filtres par Sévérité** - Critical/High/Medium
 - **Filtres par Activité** - Connect/Disconnect
 
-### 🎨 UX Premium
+###  UX Premium
 - Instructions étape par étape
 - Barres de progression animées
 - Feedback visuel (checkmarks)
 - Auto-refresh (30s)
 - Messages d'erreur clairs
 
-## 🚀 Démarrage Rapide
+##  Démarrage Rapide
 
 ### Développement Local
 
@@ -63,28 +63,11 @@ npm run dev
 
 **Accès:** http://localhost:8080/dashboard
 
----
-
-## 🌐 Déploiement Gratuit
-
-Le projet peut être déployé **gratuitement** sur plusieurs plateformes cloud. Consultez le guide complet de déploiement :
-
-📖 **[DEPLOYMENT.md](DEPLOYMENT.md)** - Guide de déploiement détaillé
-
-### Options Recommandées:
-
-| Plateforme | Frontend | Backend | Coût |
-|-----------|----------|---------|------|
-| **Render.com** ⭐ | ✅ Static Site | ✅ Web Service | **GRATUIT** |
-| Vercel + Render | ✅ | ✅ | **GRATUIT** |
-| Railway.app | ✅ | ✅ | $5/mois crédit |
-| Fly.io | ✅ | ✅ | **GRATUIT** |
-
 **Note:** Le déploiement gratuit est parfait pour démonstration et tests. Pour production, considérez un plan payant avec base de données persistante.
 
 ---
 
-## 📖 Guide d'Utilisation
+##  Guide d'Utilisation
 
 ### 1. Workflow en 3 Étapes
 
@@ -128,7 +111,7 @@ Sévérité: Critical + Activité: Connect
 2. Cliquer "Export CSV" ou "Export JSON"
 3. Fichier téléchargé: `guardian-eye-anomalies-2025-11-24.csv`
 
-## 🧠 Algorithme IA
+##  Algorithme IA
 
 ### Isolation Forest Optimisé
 
@@ -154,7 +137,7 @@ Sévérité: Critical + Activité: Connect
 - Calcul en un seul passage
 - Performance: 50% plus rapide
 
-## 📊 Statistiques
+##  Statistiques
 
 | Métrique | Valeur |
 |----------|--------|
@@ -165,7 +148,7 @@ Sévérité: Critical + Activité: Connect
 | **Performance** | 12,000+ logs/sec |
 | **Graphiques** | 4 interactifs |
 
-## 🛠️ Stack Technique
+##  Stack Technique
 
 ### Backend
 - **Node.js** + **Express.js** - API REST
@@ -180,7 +163,7 @@ Sévérité: Critical + Activité: Connect
 - **Tailwind CSS** - Styling
 - **shadcn/ui** - Composants
 
-## 📁 Structure du Projet
+##  Structure du Projet
 
 ```
 guardian-eye-security-main/
@@ -188,7 +171,7 @@ guardian-eye-security-main/
 │   ├── server.js              # Serveur Express
 │   ├── database.js            # Gestionnaire SQLite
 │   ├── csvParser.js           # Parser CSV
-│   ├── anomalyDetector.js     # IA optimisée ⚡
+│   ├── anomalyDetector.js     # IA optimisée 
 │   ├── profileBuilder.js      # Profiling utilisateur
 │   └── package.json
 ├── src/
@@ -201,8 +184,8 @@ guardian-eye-security-main/
 │       ├── charts/
 │       │   ├── AnomalyChart.tsx      # Tendances
 │       │   ├── TopUsersChart.tsx     # Top users
-│       │   ├── ActivityHeatmap.tsx   # Heatmap 🔥
-│       │   └── RiskScoreCard.tsx     # Risk scores 🛡️
+│       │   ├── ActivityHeatmap.tsx   # Heatmap 
+│       │   └── RiskScoreCard.tsx     # Risk scores 
 │       ├── export/
 │       │   └── ExportButtons.tsx     # CSV/JSON
 │       └── filters/
@@ -211,11 +194,11 @@ guardian-eye-security-main/
 ├── public/data/
 │   └── device.csv             # 65,669 logs
 ├── start.bat                  # Script de démarrage
-├── DEPLOYMENT.md              # Guide de déploiement 🚀
+├── DEPLOYMENT.md              # Guide de déploiement 
 └── README.md
 ```
 
-## 🎯 API Endpoints
+##  API Endpoints
 
 | Endpoint | Méthode | Description |
 |----------|---------|-------------|
@@ -228,7 +211,7 @@ guardian-eye-security-main/
 
 Voir [backend/API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md) pour plus de détails.
 
-## 🔧 Dépannage
+##  Dépannage
 
 ### Backend ne démarre pas
 ```bash
@@ -250,7 +233,7 @@ npm install
 2. Attendre les messages de succès
 3. Vérifier les logs du backend
 
-## 📈 Performance
+##  Performance
 
 - **Ingestion:** ~5-7 secondes (65k logs)
 - **Profiling:** ~2-3 secondes (228 users)
@@ -260,35 +243,17 @@ npm install
 - **Export CSV:** ~500ms (1,400 lignes)
 - **Export JSON:** ~300ms (1,400 lignes)
 
-## 🏆 Fonctionnalités Complètes
+##  Fonctionnalités Complètes
 
-✅ Backend optimisé (50% plus rapide)  
-✅ 4 graphiques interactifs  
-✅ Export CSV/JSON  
-✅ Recherche en temps réel  
-✅ Filtres avancés  
-✅ Heatmap d'activité  
-✅ Scores de risque  
-✅ Instructions claires  
-✅ Progression animée  
-✅ Auto-refresh  
-✅ Design professionnel  
-✅ **Déploiement gratuit disponible** 🚀
-
-## 📄 License
-
-Projet de démonstration à des fins éducatives.
-
-## 🤝 Support
-
-Pour toute question, consulter:
-- Logs du backend (terminal)
-- Console du navigateur (F12)
-- [DEPLOYMENT.md](DEPLOYMENT.md) - Guide de déploiement
-- [backend/API_DOCUMENTATION.md](backend/API_DOCUMENTATION.md) - Documentation API
-
----
-
-**🎉 GuardianEye - Détection de Menaces de Classe Mondiale**
-
-*Développé avec ❤️ pour la sécurité informatique*
+ Backend optimisé (50% plus rapide)  
+ 4 graphiques interactifs  
+ Export CSV/JSON  
+ Recherche en temps réel  
+ Filtres avancés  
+ Heatmap d'activité  
+ Scores de risque  
+ Instructions claires  
+ Progression animée  
+ Auto-refresh  
+ Design professionnel  
+ **Déploiement gratuit disponible** 
